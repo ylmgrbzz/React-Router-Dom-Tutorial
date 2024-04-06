@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -19,6 +18,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="order-summary" element={<OrderSummary />} />
         <Route path="product" element={<Product />}>
+          <Route index element={<Featured />} />
           <Route path="featured" element={<Featured />} />
           <Route path="new" element={<NewProduct />} />
         </Route>
