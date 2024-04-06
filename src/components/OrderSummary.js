@@ -1,20 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const OrderSummary = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div>Home</div>
+      <div>OrderSummary</div>
       <button
         onClick={() => {
-          navigate("/order-summary");
+          navigate(-1);
         }}
       >
-        place order
+        call back
       </button>
     </>
   );
 };
 
-export default Home;
+export default OrderSummary;
