@@ -23,6 +23,9 @@ export const Navbar = () => {
       <NavLink style={navStyles} to="/order-summary">
         Order Summary
       </NavLink>
+      <NavLink style={navStyles} to="/product">
+        Product{" "}
+      </NavLink>
     </nav>
   );
 };
