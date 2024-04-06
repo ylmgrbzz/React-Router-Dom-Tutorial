@@ -18,7 +18,12 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  outline: none;
   padding: 1rem;
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  text-decoration: none;
 }
