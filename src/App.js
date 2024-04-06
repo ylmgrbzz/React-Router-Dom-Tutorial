@@ -7,6 +7,8 @@ import { Navbar } from "./components/Navbar";
 import OrderSummary from "./components/OrderSummary";
 import NoMatch from "./components/NoMatch";
 import Product from "./components/Product";
+import Featured from "./components/Featured";
+import NewProduct from "./components/NewProduct";
 
 function App() {
   return (
@@ -14,9 +16,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/order-summary" element={<OrderSummary />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="about" element={<About />} />
+        <Route path="order-summary" element={<OrderSummary />} />
+        <Route path="product" element={<Product />}>
+          <Route path="featured" element={<Featured />} />
+          <Route path="new" element={<NewProduct />} />
+        </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
