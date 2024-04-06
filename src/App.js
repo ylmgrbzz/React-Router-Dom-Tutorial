@@ -8,6 +8,8 @@ import NoMatch from "./components/NoMatch";
 import Product from "./components/Product";
 import Featured from "./components/Featured";
 import NewProduct from "./components/NewProduct";
+import Users from "./components/Users";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="featured" element={<Featured />} />
           <Route path="new" element={<NewProduct />} />
         </Route>
+        <Route path="users" element={<Users />} />
+        <Route path="users/:userId" element={<UserDetails />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
