@@ -10,6 +10,7 @@ import Featured from "./components/Featured";
 import NewProduct from "./components/NewProduct";
 import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
+import Admin from "./components/Admin";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         </Route>
         <Route path="users" element={<Users />} />
         <Route path="users/:userId" element={<UserDetails />} />
+        <Route path="users/admin" element={<Admin />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
