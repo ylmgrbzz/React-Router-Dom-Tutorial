@@ -12,6 +12,7 @@ import NewProduct from "./components/NewProduct";
 import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
 import Admin from "./components/Admin";
+import Profile from "./components/Profile";
 const LazyComponent = React.lazy(() => import("./components/About"));
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="admin" element={<Admin />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
     </div>
   );
