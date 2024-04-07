@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from "./Auth";
 
 export const Navbar = () => {
+  const { user, logout } = useAuth();
   const navStyles = ({ isActive }) => {
     return {
       color: isActive ? "red" : "blue",
@@ -29,6 +31,11 @@ export const Navbar = () => {
       <NavLink style={navStyles} to="/profile">
         Profile{" "}
       </NavLink>
+      {!user && (
+        <NavLink style={navStyles} to="/login">
+          Login
+        </NavLink>
+      )}
     </nav>
   );
 };
