@@ -13,35 +13,38 @@ import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
 import Admin from "./components/Admin";
 import Profile from "./components/Profile";
+import { AuthProvider } from "./components/Auth";
 const LazyComponent = React.lazy(() => import("./components/About"));
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="about"
-          element={
-            <React.Suspense>
-              <LazyComponent />
-            </React.Suspense>
-          }
-        />
-        <Route path="order-summary" element={<OrderSummary />} />
-        <Route path="product" element={<Product />}>
-          <Route index element={<Featured />} />
-          <Route path="featured" element={<Featured />} />
-          <Route path="new" element={<NewProduct />} />
-        </Route>
-        <Route path="users" element={<Users />}>
-          <Route path=":userId" element={<UserDetails />} />
-          <Route path="admin" element={<Admin />} />
-        </Route>
-        <Route path="*" element={<NoMatch />} />
-        <Route path="profile" element={<Profile />} />
-      </Routes>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="about"
+            element={
+              <React.Suspense>
+                <LazyComponent />
+              </React.Suspense>
+            }
+          />
+          <Route path="order-summary" element={<OrderSummary />} />
+          <Route path="product" element={<Product />}>
+            <Route index element={<Featured />} />
+            <Route path="featured" element={<Featured />} />
+            <Route path="new" element={<NewProduct />} />
+          </Route>
+          <Route path="users" element={<Users />}>
+            <Route path=":userId" element={<UserDetails />} />
+            <Route path="admin" element={<Admin />} />
+          </Route>
+          <Route path="*" element={<NoMatch />} />
+          <Route path="profile" element={<Profile />} />
+        </Routes>
+      </AuthProvider>
     </div>
   );
 }
